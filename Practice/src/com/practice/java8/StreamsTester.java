@@ -48,10 +48,26 @@ class StreamsTools {
 		//studentIds.stream().filter(predicate)
 		List<String>strings = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
 
+		demoStreamFilterOperation(strings);
+		demoStreamCollectOperation(strings);
+		
+		strings.stream().forEach(System.out :: println);// printing current element in Stream
+		
+	}
+
+	
+	private void demoStreamCollectOperation(List<String> strings) {
+		// TODO Add code for this
+		
+	}
+
+	/**
+	 * @param strings
+	 */
+	private void demoStreamFilterOperation(List<String> strings) {
 		//get count of empty string
 		long count = strings.stream().filter(tempString -> !tempString.isEmpty()).count();
 		
 		System.out.println("Non Empty string count is : " + count);
-		
 	}
 }
