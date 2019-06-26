@@ -6,6 +6,7 @@ package com.practice.java8;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author JJPL278
@@ -58,7 +59,8 @@ class StreamsTools {
 	
 	private void demoStreamCollectOperation(List<String> strings) {
 		// TODO Add code for this
-		
+		List<String> nonEmptyStrings  = strings.stream().filter(currString -> !currString.isEmpty()).collect(Collectors.toList());
+		nonEmptyStrings.stream().forEach(System.out :: println);
 	}
 
 	/**
