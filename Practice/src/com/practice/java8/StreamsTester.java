@@ -54,6 +54,7 @@ class StreamsTools {
 		
 		strings.stream().forEach(System.out :: println);// printing current element in Stream
 		
+		
 	}
 
 	

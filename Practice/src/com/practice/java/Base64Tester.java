@@ -35,7 +35,7 @@ public class Base64Tester {
         String inputString = "Velmurugan";
         String encodedString;
 		try {
-			encodedString = encoder.encodeToString("Velmurugan".getBytes("UTF-8"));
+			encodedString = encoder.encodeToString("Velmurugan Moorthy".getBytes("utf-8"));
 			System.out.println("Encoded string: "+encodedString);  
 	        // Getting decoder  
 	        Base64.Decoder decoder = Base64.getDecoder();  
