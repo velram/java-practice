@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * @author JJPL278
+ * @author Velmurugan Moorthy
  *
  */
 public class StreamsTester {
