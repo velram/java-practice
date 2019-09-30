@@ -29,11 +29,12 @@ public class StreamsTester {
  * 
  * @author Velmurugan
  * Date 25-Jun-2019 | Time 3:12:53 pm
+ *
+ * Topics covered : 
+ * 1. Streams - filter() operation
+ * 2. Streams - collect() operation
+ * 3. Streams - forEach() operation
  * 
- * Various ways to create Streams
- * 1. Stream.of()
- * 2. list.stream()
- * 3. Array.stream 
  */
 class StreamsTools {
 	
@@ -49,6 +50,33 @@ class StreamsTools {
 		demoStreamForEach(strings);		
 	}
 
+	
+	/**
+	 * @param strings
+	 */
+	private void demoStreamFilterOperation(List<String> strings) {
+		//get count of empty string
+		System.out.println("\n======================================");
+		System.out.println("Streams - Filter operation demo start \n");
+		long count = strings.stream().filter(tempString -> !tempString.isEmpty()).count();
+		
+		strings.stream().filter(tempString -> !tempString.isEmpty()).forEach(System.out :: println);
+		
+		System.out.println("Non Empty string count is : " + count);
+		
+		System.out.println("\nStreams - Filter operation demo end");
+		System.out.println("======================================");
+	}
+	
+
+	private void demoStreamCollectOperation(List<String> strings) {
+		System.out.println("\n======================================");
+		System.out.println("Streams - Collect operation demo start \n");
+		List<String> nonEmptyStrings  = strings.stream().filter(currString -> !currString.isEmpty()).collect(Collectors.toList());
+		nonEmptyStrings.stream().forEach(System.out :: println);
+		System.out.println("\nStreams - Collect operation demo ends");
+		System.out.println("======================================");
+	}
 	
 	private void demoStreamForEach(List<String> strings) {
 		
@@ -68,28 +96,4 @@ class StreamsTools {
 		System.out.println("======================================");
 	}
 
-
-	private void demoStreamCollectOperation(List<String> strings) {
-		System.out.println("\n======================================");
-		System.out.println("Streams - Collect operation demo start \n");
-		List<String> nonEmptyStrings  = strings.stream().filter(currString -> !currString.isEmpty()).collect(Collectors.toList());
-		nonEmptyStrings.stream().forEach(System.out :: println);
-		System.out.println("\nStreams - Collect operation demo ends");
-		System.out.println("======================================");
-	}
-
-	/**
-	 * @param strings
-	 */
-	private void demoStreamFilterOperation(List<String> strings) {
-		//get count of empty string
-		System.out.println("\n======================================");
-		System.out.println("Streams - Filter operation demo start \n");
-		long count = strings.stream().filter(tempString -> !tempString.isEmpty()).count();
-		
-		System.out.println("Non Empty string count is : " + count);
-		
-		System.out.println("\nStreams - Filter operation demo end");
-		System.out.println("======================================");
-	}
 }
