@@ -39,29 +39,43 @@ class StreamsTools {
 	
 	public void demoStreamOperations() {
 		
-		List<Integer> studentIds = new ArrayList<Integer>();
-		int[] studentAges = {2893, 1, 389, 3, 2, 6,7};
-
-		for(int loopIndex = 1; loopIndex< 10; loopIndex++){
-			studentIds.add(loopIndex);
-        }
+		//List<Integer> studentIds = Arrays.asList(2893, 1, 389, 3, 2, 6,7);
 		
 		//studentIds.stream().filter(predicate)
 		List<String>strings = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
 
 		demoStreamFilterOperation(strings);
 		demoStreamCollectOperation(strings);
-		
-		strings.stream().forEach(System.out :: println);// printing current element in Stream
-		
-		
+		demoStreamForEach(strings);		
 	}
 
 	
+	private void demoStreamForEach(List<String> strings) {
+		
+		System.out.println("\n======================================");
+		System.out.println("Streams - For Each demo start\n");
+		
+		
+		//Method #1 - using Lambda expression
+		strings.forEach(string -> System.out.println(string));
+		
+		//Method #2 - Using "Method reference" approach
+		strings.forEach(System.out :: println);
+		
+ 
+		
+		System.out.println("\nStreams - For Each demo end");		
+		System.out.println("======================================");
+	}
+
+
 	private void demoStreamCollectOperation(List<String> strings) {
-		// TODO Add code for this
+		System.out.println("\n======================================");
+		System.out.println("Streams - Collect operation demo start \n");
 		List<String> nonEmptyStrings  = strings.stream().filter(currString -> !currString.isEmpty()).collect(Collectors.toList());
 		nonEmptyStrings.stream().forEach(System.out :: println);
+		System.out.println("\nStreams - Collect operation demo ends");
+		System.out.println("======================================");
 	}
 
 	/**
@@ -69,8 +83,13 @@ class StreamsTools {
 	 */
 	private void demoStreamFilterOperation(List<String> strings) {
 		//get count of empty string
+		System.out.println("\n======================================");
+		System.out.println("Streams - Filter operation demo start \n");
 		long count = strings.stream().filter(tempString -> !tempString.isEmpty()).count();
 		
 		System.out.println("Non Empty string count is : " + count);
+		
+		System.out.println("\nStreams - Filter operation demo end");
+		System.out.println("======================================");
 	}
 }
