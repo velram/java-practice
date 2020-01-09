@@ -39,5 +39,25 @@ class ArrayListDemo{
          */
         sampleNumbers.add(8,9);
         System.out.println("List is : "+sampleNumbers);
+
+        //subList() - demo
+
+        List<Integer> sampleSubList = sampleNumbers.subList(2,5);
+        System.out.println("Sublist is : " + sampleSubList);
+        System.out.println("Before update Parent List is : "+sampleNumbers);
+
+        sampleSubList.set(0,4);
+        System.out.println("Sublist is : " + sampleSubList);
+        System.out.println("After update Parent List is : "+sampleNumbers);
+
+        sampleNumbers.set(2,3);
+        System.out.println("After update Parent List is : "+sampleNumbers);
+        System.out.println("After update Sublist is : " + sampleSubList);
+
+        /*
+         * Learning : any value update in parent / sublist
+         * will impact both parent & sub-list
+         */
+
     }
 }
