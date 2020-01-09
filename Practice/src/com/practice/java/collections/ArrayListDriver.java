@@ -47,17 +47,36 @@ class ArrayListDemo{
         System.out.println("Before update Parent List is : "+sampleNumbers);
 
         sampleSubList.set(0,4);
-        System.out.println("Sublist is : " + sampleSubList);
-        System.out.println("After update Parent List is : "+sampleNumbers);
+        System.out.println("After  set() op Sublist is : " + sampleSubList);
+        System.out.println("After  set() op update Parent List is : "+sampleNumbers);
 
         sampleNumbers.set(2,3);
-        System.out.println("After update Parent List is : "+sampleNumbers);
-        System.out.println("After update Sublist is : " + sampleSubList);
+        System.out.println("After set() ops update Parent List is : "+sampleNumbers);
+        System.out.println("After set() ops update Sublist is : " + sampleSubList);
 
         /*
          * Learning : any value update in parent / sublist
          * will impact both parent & sub-list
          */
+
+        /**
+         * removeAll() operation
+         */
+        sampleNumbers.removeAll(Arrays.asList(4,5,6));
+        System.out.println("After removeAll() operation Parent List is : "+sampleNumbers);
+
+        /**
+         * retainAll() operation
+         * This will retain only the input list elements
+         * Removes all existing elements
+         * If input list doesn't match will empty the existing list.
+         */
+        sampleNumbers.retainAll(Arrays.asList(1,2,3));
+        System.out.println("After retainAll() operation update Parent List is : "+sampleNumbers);
+
+        //This will return empty list because no matching elements will be found
+        sampleNumbers.retainAll(Arrays.asList(4,5,6));
+        System.out.println("After retainAll() operation update Parent List is : "+sampleNumbers);
 
     }
 }
