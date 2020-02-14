@@ -4,7 +4,7 @@
 package com.practice.java;
 
 /**
- * @author JJPL278
+ * @author Velmurugan
  *
  */
 public class StringTester {

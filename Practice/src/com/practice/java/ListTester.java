@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * @author JJPL278
+ * @author Velmurugan
  * Aim : To verify the size of the array list after adding nulls
  */
 public class ListTester {

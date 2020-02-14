@@ -4,7 +4,7 @@
 package com.practice.java;
 
 /**
- * @author JJPL278
+ * @author Velmurugan
  * This method is to verify the Object's pass by reference
  */
 public class ReferenceTester {

@@ -7,7 +7,7 @@ import java.util.Properties;
 import java.util.Set;
 
 /**
- * @author JJPL278
+ * @author Velmurugan
  *
  */
 public class PropertiesTester {
